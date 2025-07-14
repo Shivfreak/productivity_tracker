@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Productivity Dashboard",
+  "version": "1.1",
+  "description": "Manage tasks, track website usage, and visualize progress",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "webNavigation",
+    "notifications"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icon48.jpeg",
+    "128": "icon128.jpeg"
+  }
+}
